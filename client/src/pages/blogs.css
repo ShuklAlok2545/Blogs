@@ -1,0 +1,151 @@
+   .blogs {
+    padding: 2rem;
+    background: #111827;
+    color: #b1d4f8;
+  }
+  
+  .blogs-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+  .blogs-section {
+    margin-bottom: 3rem;
+  }
+  
+  .blogs-subtitle {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: #60a5fa;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+  .blogs-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+  
+  .blogs-item {
+    background: #1f2937;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: transform 0.2s;
+  }
+  
+  .blogs-item:hover {
+    transform: scale(1.02);
+  }
+  
+  .blogs-item img,
+  .blogs-item video {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  /* Fullscreen modal */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+  }
+  
+  .modal-content img,
+  .modal-content video {
+    max-width: 100%;
+    max-height: 90vh;
+    border-radius: 12px;
+  }
+  
+  .modal-close {
+    position: absolute;
+    top: -40px;
+    right: -10px;
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 0.5rem 0.8rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  .end {
+    text-align: center;
+    color: #9ca3af;
+    margin-top: 1rem;
+  }
+
+.share-popup {
+  display: inline;
+  position: relative;
+  float: right;
+  margin-top: 4px;
+  background-color: #1f2937ed; 
+  color: white;
+  padding: 4px 8px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 0.870rem; 
+  white-space: nowrap;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+} 
+.sharing:hover{
+  color: #60a5fa;
+  background-color:#1f2937;
+  border-radius: 10px;
+}
+.sharing{
+  position: relative;
+  float: right;
+  margin: 5px 6px 0 0;
+}
+.likes{
+  margin: 5px 0px 0 6px;
+  transition: all 0.3s;
+}
+.likes:hover{
+  color:#b71c4f;
+}
+/* Likes count next to heart icon */
+.likes-count {
+  display: inline-block;
+  margin-left: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #f1f1f1; /* light color for dark background */
+  background: #2a2a40; /* subtle dark background */
+  padding: 2px 6px;
+  border-radius: 6px;
+  min-width: 24px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+}
+
+.likes-count:hover {
+  background: #3b3b5a;
+  color: #4cafef; /* highlight on hover */
+  transform: translateY(-1px);
+}

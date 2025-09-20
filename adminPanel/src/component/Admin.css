@@ -1,0 +1,115 @@
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html, body {
+    height: 100%;
+    width: 100%;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: #121223;
+    display: flex;               /* make body itself a flexbox */
+    justify-content: center;     /* center horizontally */
+    align-items: center;         /* center vertically */
+  }
+  
+  /* Page wrapper (optional, but keeps structure) */
+  .page-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Admin card */
+  .admin-container {
+    max-width: 400px;
+    width: 100%;
+    background: #1e1e2f;
+    padding: 32px 24px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    color: #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .admin-container h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+  }
+  
+  /* Forms */
+  .form-container,
+  .form-container-file {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .form-container input,
+  .form-container-file input[type="file"] {
+    padding: 12px 14px;
+    border: 1px solid #444;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #2a2a40;
+    color: #f1f1f1;
+    transition: border-color 0.3s, background 0.3s;
+    width: 100%;
+  }
+  
+  .form-container input:focus,
+  .form-container-file input[type="file"]:focus {
+    border-color: #4cafef;
+    background: #33334d;
+  }
+  
+  /* Button */
+  .btn {
+    padding: 12px 16px;
+    border: none;
+    border-radius: 8px;
+    background: #4cafef;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    width: 100%;
+  }
+  
+  .btn:hover {
+    background: #3b8edc;
+    transform: translateY(-2px);
+  }
+  
+  .btn:active {
+    transform: translateY(1px);
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 600px) {
+    .admin-container {
+      padding: 24px 16px;
+      border-radius: 12px;
+    }
+  
+    .admin-container h2 {
+      font-size: 1.3rem;
+    }
+  
+    .form-container input,
+    .form-container-file input[type="file"],
+    .btn {
+      font-size: 0.95rem;
+      padding: 10px 12px;
+    }
+  }
+  
