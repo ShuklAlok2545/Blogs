@@ -34,7 +34,7 @@ export const Home = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5300/api/home/videos")
+      .get("https://blogs-me15.onrender.com/api/home/videos")
     .then((res) => {
       setVideos(res.data.videos)
       setLoader(false);
