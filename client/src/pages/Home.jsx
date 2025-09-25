@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
-
+import { Loader } from '../components/Loader.jsx'
 
 
 import axios from "axios";
@@ -11,6 +11,8 @@ import "./Home.css";
 
 export const Home = () => {
   const [videos, setVideos] = useState([]);
+  const [loader,setLoader] = useState(true);
+
   const sliderRef = useRef(null); 
 
   const settings = {
@@ -33,11 +35,16 @@ export const Home = () => {
   useEffect(() => {
     axios
       .get("http://localhost:5300/api/home/videos")
-      .then((res) => setVideos(res.data.videos))
+    .then((res) => {
+      setVideos(res.data.videos)
+      setLoader(false);
+    })
+
       .catch((err) => console.error("Error fetching videos:", err));
   }, []);
 
-  
+
+
   const handlePlay = () => {
     if (sliderRef.current) {
       sliderRef.current.slickPause();
@@ -53,7 +60,11 @@ export const Home = () => {
 
   const mainurl = 'https://www.youtube.com/embed/gPfEJLt4nCc?autoplay=1&mute=1&loop=1&playlist=gPfEJLt4nCc&controls=0&modestbranding=1&rel=0&showinfo=0'
 
+  if(loader){
+    return (<Loader></Loader>)
+  }
   return (
+    
     <div className="home">
       <section className="hero">
         {/* <video className="hero-video" autoPlay loop muted playsInline>

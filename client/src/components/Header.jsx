@@ -29,6 +29,7 @@ export const Header = () => {
     try {
       const userData = await loginWithGoogle(); //login-via-google and getting data
       const { uid, displayName, email, photoURL } = userData;
+      console.log(photoURL);
       // sending to store unique users 
       await fetch(`${BaseURI}/api/auth/google-login`, { 
         method: "POST",
@@ -44,6 +45,8 @@ export const Header = () => {
       console.error("Login failed:", err);
     }
   };
+
+  
   
   // Logout
   const handleLogout = async () => {
