@@ -13,7 +13,7 @@ export const Header = () => {
   const toggleMenu = () => setMenuOpen(!menuOpen);
   const closeMenu = () => setMenuOpen(false);
 
-  const BaseURI  = 'http://localhost:5300'
+  const BaseURI  = 'https://blogs-me15.onrender.com'
 
   // Track auth state
   useEffect(() => {
