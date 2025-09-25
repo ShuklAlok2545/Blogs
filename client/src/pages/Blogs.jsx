@@ -25,7 +25,8 @@ export const Blogs = () => {
   const [likeCounts, setLikeCounts] = useState({});
   const [shareCounts, setshareCounts] = useState({});
 
-  const BaseURI = 'http://localhost:5300'
+  // const BaseURI = 'http://localhost:5300'
+  const BaseURI = 'https://blogs-me15.onrender.com'
   useEffect(() => {
     const cache = JSON.parse(localStorage.getItem("userLikes") || "{}");
     setLikesCache(cache);
