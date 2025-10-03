@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "./Blogs.css";
+import "./blogs.css";
 import { Loader } from "../components/Loader";
 import { MdShare } from "react-icons/md";
 import { FaRegHeart } from "react-icons/fa";
+import { FaVideo } from "react-icons/fa";
+import { FaRegImage } from "react-icons/fa";
+
 
 export const Blogs = () => {
   const [videos, setVideos] = useState([]);
@@ -25,7 +28,10 @@ export const Blogs = () => {
   const [likeCounts, setLikeCounts] = useState({});
   const [shareCounts, setshareCounts] = useState({});
 
+<<<<<<< HEAD
   // const BaseURI = 'http://localhost:5300'
+=======
+>>>>>>> 984bcfa (ui updated)
   const BaseURI = 'https://blogs-me15.onrender.com'
   useEffect(() => {
     const cache = JSON.parse(localStorage.getItem("userLikes") || "{}");
@@ -206,16 +212,37 @@ export const Blogs = () => {
   }, [shared]);
 
 
+  const scrollToVideo = (e) => {
+    e.preventDefault(); 
+    const section = document.getElementById("vdosection");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+  const scrollToImages = (e) => {
+    e.preventDefault();
+    const section = document.getElementById("imgsection");
+    if (section) {
+      const yOffset = -100;
+      const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  };
+  
+
   return (
     <div className="blogs">
       {loading ? (
         <Loader />
       ) : (
         <>
-          <h1 className="blogs-title">Welcome to Blogs</h1>
-
-          <section className="blogs-section">
-            <h2 className="blogs-subtitle">Videos</h2>
+          <h1 className="blogs-title" id="vdosection" style={{padding:'2rem'}}>Enjoy the Moments</h1>
+          <section className="blogs-section" >
+            <h2 className="blogs-subtitle">
+              <FaVideo size={24} color="#60a5fa" />
+             <a href="#imgsection" className="img-link" onClick={scrollToImages}>
+              <FaRegImage className="img-icon"/></a> 
+            </h2>
             <div className="blogs-grid">
               {videos.length === 0 ? (
                 <p>No videos available</p>
@@ -236,6 +263,9 @@ export const Blogs = () => {
                       <source src={video.url} type="video/mp4" />
                     </video>
 
+
+                    <div className="like-share-container">
+                      <div className="like">
                     <span
                       className="likes"
                       onClick={(e) => {
@@ -243,12 +273,14 @@ export const Blogs = () => {
                         liked(video.public_id);
                       }}
                     >
-                      <FaRegHeart
+                      <FaRegHeart 
                         color={isItemLiked(video.public_id) ? "red" : "gray"}
                       />
                       <span className="likes-count">{likeCounts[video.public_id] || 0}</span>
                     </span>
+                    </div>
 
+                      <div className="share">
                     <span
                       className="sharing"
                       onClick={(e) => {
@@ -261,9 +293,12 @@ export const Blogs = () => {
                         shared({ id: video.public_id });
                       }}
                     >
+                      
+                      <MdShare style={{color:'#0088CC'}}/>
                       <span className="likes-count" >{shareCounts[video.public_id]}</span>
-                      <MdShare />
                     </span>
+                    </div>
+                    </div>
 
                     {copied === video.public_id && (
                       <div className="share-popup">Link copied!</div>
@@ -275,8 +310,14 @@ export const Blogs = () => {
             {!videoHasMore && <p className="end">No more videos</p>}
           </section>
 
-          <section className="blogs-section">
-            <h2 className="blogs-subtitle">Images</h2>
+          <section className="blogs-section"  id="imgsection">
+            <h2 className="blogs-subtitle">
+            <FaRegImage size={24} className="image-icon"/> 
+            <a href="#vdosection" className="video-link" onClick={scrollToVideo}>
+            <FaVideo className="video-icon" size={24}/>
+            </a>
+            
+            </h2>
             <div className="blogs-grid">
               {images.length === 0 ? (
                 <p>No images available</p>
@@ -290,7 +331,8 @@ export const Blogs = () => {
                     }
                   >
                     <img src={image.url} alt="blog" loading="lazy" />
-
+                  <div className="like-share-container">
+                    <div>
                     <span
                       className="likes"
                       onClick={(e) => {
@@ -303,22 +345,26 @@ export const Blogs = () => {
                       />
                       <span className="likes-count">{likeCounts[image.public_id] || 0}</span>
                     </span>
-
-                    <span
-                      className="sharing"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        sharingVideo({
-                          url: image.url,
-                          type: "image",
-                          id: image.public_id,
-                        });
-                        shared({ id: image.public_id });
-                      }}
-                    >
-                       <span className="likes-count" >{shareCounts[image.public_id]}</span>
-                      <MdShare />
-                    </span>
+                    </div>
+                    <div>
+                      <span
+                        className="sharing"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          sharingVideo({
+                            url: image.url,
+                            type: "image",
+                            id: image.public_id,
+                          });
+                          shared({ id: image.public_id });
+                        }}
+                      >
+                          <MdShare />
+                        <span className="likes-count" >{shareCounts[image.public_id]}</span>
+                        
+                      </span>
+                    </div>
+                  </div>
 
                     {copied === image.public_id && (
                       <div className="share-popup">Link copied!</div>

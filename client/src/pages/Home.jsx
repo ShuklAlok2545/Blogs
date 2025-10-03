@@ -85,7 +85,7 @@ export const Home = () => {
 
 
         <div className="hero-overlay">
-          <h1>Explore NIT Srinagar Blogs</h1>
+          <h1>Explore NIT Srinagar Moments</h1>
           <p>
           Step into the world of stories, experiences, and creativity from the heart of NIT Srinagar! 🌿 From the scenic Dal Lake mornings to late-night hostel
            tales, from tech innovations to cultural celebrations – the blogs capture the spirit of campus life like never before.
@@ -98,7 +98,7 @@ export const Home = () => {
 
 
       <section className="slider-section">
-        <p className="latestb">Latest Blogs</p>
+        <p className="latestb">Latest Moments</p>
         <Slider ref={sliderRef} {...settings}>
           {videos.length > 0 ? (
             videos.map((video, i) => (

@@ -92,11 +92,11 @@
   @media (max-width: 768px) {
     .navbar-wrapper {
       position: fixed;
-      top: 70px;
+      top: 68px;
       left: 0;
       right: 0;
-      height: calc(500px - 70px);
-      background: rgba(15, 15, 15, 0.95);
+      height: calc(400px - 68px);
+      background: rgba(9, 15, 21, 0.963);
       backdrop-filter: blur(20px);
       flex-direction: column;
       align-items: center;
@@ -112,6 +112,7 @@
       transform: translateY(0);
       opacity: 1;
       pointer-events: auto;
+      background:  rgba(9, 15, 21, 0.963);
     }
   
     .navbar-links {
@@ -127,16 +128,25 @@
     .hamburger {
       display: block;
     }
+    .user-info{
+      padding: 8px;
+      border-radius: 14px;
+      border:1px solid #4d88fe;
+    }
+    .user-avatar { 
+      border: 2px solid #ffffff;
+    }
   }
 
-  .user-avatar {
+  
+.user-avatar {
     width: 40px;      
     height: 40px;     
     border-radius: 50%;
     object-fit: cover; 
     margin-right: 10px; 
     vertical-align: middle; 
-    border: 2px solid #1c1c1c;
+    border: 2px solid #969696;
   }
 .user-name{
   padding: 5px;

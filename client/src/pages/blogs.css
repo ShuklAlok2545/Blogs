@@ -1,6 +1,6 @@
    .blogs {
     padding: 2rem;
-    background: #111827;
+    background:#04031363;
     color: #b1d4f8;
   }
   
@@ -8,7 +8,13 @@
     text-align: center;
     margin-bottom: 2rem;
     font-size: 2rem;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Roboto Slab', serif;
+    font-style: oblique;
+    text-shadow: 
+      1px 1px 0 #000,
+      2px 2px 0 #333,
+      3px 3px 0 #666;
+    margin: 1rem;
   }
   
   .blogs-section {
@@ -80,13 +86,14 @@
     position: absolute;
     top: -40px;
     right: -10px;
-    background: #ef4444;
+    background: #3b1616;
     color: white;
     border: none;
     padding: 0.5rem 0.8rem;
     border-radius: 6px;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 1.2rem;
+    font-weight: normal;
   }
   
   .end {
@@ -116,26 +123,38 @@
   background-color:#1f2937;
   border-radius: 10px;
 }
+.like-share-container{
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
 .sharing{
   position: relative;
   float: right;
   margin: 5px 6px 0 0;
+  display: flex;
+  align-items: center;
 }
 .likes{
+  display: inline;
   margin: 5px 0px 0 6px;
   transition: all 0.3s;
+  display: flex;
+  align-items: center;
 }
+
 .likes:hover{
   color:#b71c4f;
 }
-/* Likes count next to heart icon */
+
 .likes-count {
   display: inline-block;
-  margin-left: 6px;
+  margin-left: 7px;
+  margin-right: 7px;
   font-size: 0.9rem;
   font-weight: 600;
-  color: #f1f1f1; /* light color for dark background */
-  background: #2a2a40; /* subtle dark background */
+  color: #f1f1f1; 
+  background: #2a2a40; 
   padding: 2px 6px;
   border-radius: 6px;
   min-width: 24px;
@@ -146,6 +165,45 @@
 
 .likes-count:hover {
   background: #3b3b5a;
-  color: #4cafef; /* highlight on hover */
+  color: #4cafef;
   transform: translateY(-1px);
 }
+.video-link {
+  text-decoration: none;
+  display: inline-block;
+}
+
+.video-icon {
+  color: grey;          
+  margin-left: 10px;     
+  transition: all 0.3s ease;
+}
+
+.video-link:hover .video-icon {
+  color: #60a5fa;         
+  transform: scale(1.2) rotate(10deg);
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.3); 
+}
+.img-link {
+  text-decoration: none;
+  display: inline-block;
+}
+
+
+.img-icon {
+  color: grey;          
+  margin-left: 10px;      
+  transition: all 0.3s ease;
+}
+
+.img-link:hover .img-icon {
+  color: #60a5fa;         
+  transform: scale(1.2) rotate(10deg);
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.3); 
+}
+
+
+
+
+
+

@@ -9,6 +9,8 @@
     flex-wrap: wrap;
     gap: 1rem;
     text-align: center;
+    border-top: 0.2px solid rgb(48, 46, 43);
+    min-height: max-content;
   }
   
   .footer-left {

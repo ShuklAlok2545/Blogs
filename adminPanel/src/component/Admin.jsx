@@ -8,7 +8,7 @@ export const Admin = () => {
   const [token, setToken] = useState(null);
   const [file, setFile] = useState(null);
 
-  const API_BASE = "http://localhost:5300";
+  const API_BASE = "https://blogs-me15.onrender.com";
 
   // login handler
   const handleLogin = async (e) => {

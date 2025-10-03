@@ -15,21 +15,22 @@ export const Footer = () => {
       </div>
 
       <div className="footer-center">
-        <p>© {new Date().getFullYear()} BlogsIcon. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} NIT SGR 🍁 . All rights reserved.</p>
       </div>
 
       <div className="footer-right">
         <a href="https://www.linkedin.com/in/alok-shukla-ack/" target="_blank" rel="noopener noreferrer">
-          <FaLinkedin />
+          <FaLinkedin style={{color:'#0A66C2'}} />
         </a>
         <a href="https://www.instagram.com/shuklalok_.2545/" target="_blank" rel="noopener noreferrer">
-          <FaInstagram />
+          <FaInstagram  style={{background:'linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)'
+}}/>
         </a>
         <a href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`} target="_blank" rel="noopener noreferrer">
-          <FaWhatsapp />
+          <FaWhatsapp style={{color:'#25D366'}}/>
         </a>
         <a href="https://shuklalokportfolio.netlify.app/" target="_blank" rel="noopener noreferrer">
-      <FaFolderOpen  />
+      <FaFolderOpen  style={{color:'#4A90E2'}}/>
     </a>
       </div>
     </footer>

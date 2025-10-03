@@ -133,8 +133,13 @@ body, html {
   color:#60a5fa;
 }
 @media (max-width: 1024px) {
+  .hero {
+    height: 45vh;
+    min-height: max-content;
+    margin-bottom: 1rem;
+  }
   .hero-overlay h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
   .hero-overlay p {
     font-size: 1rem;
@@ -146,7 +151,9 @@ body, html {
 
 @media (max-width: 768px) {
   .hero {
-    height: 60vh;
+    height: 44vh;
+    min-height: max-content;
+    margin-bottom: 1rem;
   }
 
   .hero-overlay h1 {
@@ -158,22 +165,28 @@ body, html {
   }
 
   .video-container {
-    max-width: 90%;
+    max-width: 92%;
   }
 }
 
+
 @media (max-width: 480px) {
   .hero {
-    height: 46vh;
+    height: 40vh;
+    min-height: max-content;
+    margin-bottom: 1rem;
   }
-
+  .slider-section{
+    padding: 25px 18px;
+    margin-bottom: 1rem;
+  }
   .hero-overlay h1 {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin: 1px;
   }
 
   .hero-overlay p {
-    font-size: 0.75rem;
+    font-size: 0.70rem;
     margin: 4px;
   }
 
@@ -183,9 +196,10 @@ body, html {
   }
 
   .video-container {
-    max-width: 95%;
+    max-width: 100%;
   }
   .latestb{
     font-size: 1.3rem;
+    padding: 5px;
   }
 }

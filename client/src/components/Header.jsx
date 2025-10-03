@@ -56,7 +56,7 @@ export const Header = () => {
 
   return (
     <header className="navbar">
-      <div className="navbar-logo">NIT Blogs</div>
+      <div className="navbar-logo">NIT SGR 🍁</div>
 
       <div className={`navbar-wrapper ${menuOpen ? "open" : ""}`}>
         <ul className="navbar-links">
