@@ -9,7 +9,7 @@ const app = express();
 const Port = process.env.port;
 
 app.use(cors({
-    origin:'http://localhost:5173/'
+    origin:['https://nitsxrblogs.netlify.app','https://blogsadmin.netlify.app']
 }))
 app.disable("x-powered-by");
 
