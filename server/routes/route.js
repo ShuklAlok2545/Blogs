@@ -6,6 +6,8 @@ import jwt from 'jsonwebtoken';
 import dotenv from "dotenv";
 import fs from 'fs'
 import Blog from '../models/post.js'
+import { allusers} from '../notification/mails.js';
+import { get } from 'http';
 
 dotenv.config();
 
@@ -13,6 +15,10 @@ const router = express.Router();
 const ADMIN_EMAIL = process.env.ADMIN_EMAIL;
 const ADMIN_PASS = process.env.ADMIN_PASS;
 const JWT_SECRET = process.env.JWT_SECRET;
+
+//send mail to all users when new post added
+allusers();
+
 
 
 // admin Login
@@ -60,7 +66,6 @@ router.post('/upload', upload.single("file"), async (req, res) => {
   router.post("/api/auth/google-login", async (req, res) => {
     try {
       const { googleId, name, email, avatar } = req.body;
-  
       if (!googleId || !email) {
         return res.status(400).json({ error: "Missing required fields" });
       }
@@ -88,7 +93,7 @@ router.post('/upload', upload.single("file"), async (req, res) => {
 // Helper to map DB doc to API shape
 const mapDoc = (d) => ({
   public_id: d.public_id,
-  url: d.secure_url,       // <- frontend expects `.url`
+  url: d.secure_url,       //frontend expects '.url'
   fileType: d.fileType,
   createdAt: d.createdAt,
 });
@@ -244,6 +249,8 @@ router.get("/api/blogs/images", async (req, res) => {
       res.status(500).json({ message: "Server error" });
     }
   });
+  
+
   
 
   

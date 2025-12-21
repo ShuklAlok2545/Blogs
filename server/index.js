@@ -9,7 +9,7 @@ const app = express();
 const Port = process.env.port;
 
 app.use(cors({
-    origin:'*'
+    origin:'http://localhost:5173/'
 }))
 app.disable("x-powered-by");
 

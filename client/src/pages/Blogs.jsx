@@ -6,7 +6,7 @@ import { MdShare } from "react-icons/md";
 import { FaRegHeart } from "react-icons/fa";
 import { FaVideo } from "react-icons/fa";
 import { FaRegImage } from "react-icons/fa";
-
+import { FaTimes } from "react-icons/fa";
 
 export const Blogs = () => {
   const [videos, setVideos] = useState([]);
@@ -129,27 +129,7 @@ export const Blogs = () => {
     return () => window.removeEventListener("keydown", handleEscape);
   }, []);
 
-
-
-
-  const sharingVideo = async (obj) => {
-    const { url, type, id } = obj;
-    if (navigator.share) {
-      try {
-        await navigator.share({
-          title: `share this ${type} content`,
-          url: url,
-        });
-      } catch (err) {
-        console.log(err);
-      }
-    } else {
-      await navigator.clipboard.writeText(url);
-      setCopied(id);
-      setTimeout(() => setCopied(null), 2000);
-    }
-  };
-
+  //likes
 
   const liked = async (public_id) => {
     try {
@@ -184,7 +164,7 @@ export const Blogs = () => {
     fetchLikeCounts();
   }, [liked]);
 
-
+//sharing
   
   const shared = async (obj) => {
     try {
@@ -207,6 +187,25 @@ export const Blogs = () => {
     };
     fetchShareCounts();
   }, [shared]);
+
+  const sharingVideo = async (obj) => {
+    const { url, type, id } = obj;
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: `share this ${type} content`,
+          url: url,
+        });
+      } catch (err) {
+        console.log(err);
+      }
+    } else {
+      await navigator.clipboard.writeText(url);
+      setCopied(id);
+      setTimeout(() => setCopied(null), 2000);
+    }
+  };
+
 
 
   const scrollToVideo = (e) => {
@@ -233,10 +232,12 @@ export const Blogs = () => {
         <Loader />
       ) : (
         <>
-          <h1 className="blogs-title" id="vdosection" style={{padding:'2rem'}}>Enjoy the Moments</h1>
+        
+          <h1 className="blogs-title" id="vdosection" style={{padding:'2rem'}}> <div id="hdbx"> 
+            <span id="sp1">Enjoy</span><span id="sp2">the</span><span id="sp3">Moments</span></div></h1>
           <section className="blogs-section" >
             <h2 className="blogs-subtitle">
-              <FaVideo size={24} color="#60a5fa" />
+              <FaVideo size={24} id="vdo-icon"/>
              <a href="#imgsection" className="img-link" onClick={scrollToImages}>
               <FaRegImage className="img-icon"/></a> 
             </h2>
@@ -309,7 +310,7 @@ export const Blogs = () => {
 
           <section className="blogs-section"  id="imgsection">
             <h2 className="blogs-subtitle">
-            <FaRegImage size={24} className="image-icon"/> 
+            <FaRegImage size={24} className="image-icon" id="img-icon" /> 
             <a href="#vdosection" className="video-link" onClick={scrollToVideo}>
             <FaVideo className="video-icon" size={24}/>
             </a>
@@ -386,8 +387,9 @@ export const Blogs = () => {
                   className="modal-close"
                   onClick={() => setSelectedContent(null)}
                 >
-                  ✖
+                <FaTimes size={24} />
                 </button>
+
                 {selectedContent.type === "image" ? (
                   <img src={selectedContent.url} alt="fullscreen" />
                 ) : (

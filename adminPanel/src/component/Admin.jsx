@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Admin.css";
-
+import {FaWhatsapp } from "react-icons/fa";
 export const Admin = () => {
   const [mail, setMail] = useState("");
   const [passkey, setPasskey] = useState("");
@@ -9,6 +9,9 @@ export const Admin = () => {
   const [file, setFile] = useState(null);
 
   const API_BASE = "https://blogs-me15.onrender.com";
+
+  const phoneNumber= '+919991866256'
+  const message = "Hello! I found you via your BlogsPage.Please provide me mail and password to upload some good content";
 
   // login handler
   const handleLogin = async (e) => {
@@ -21,7 +24,9 @@ export const Admin = () => {
 
       if (res.data.token) {
         setToken(res.data.token);
-        alert("✅ Login successful");
+        //alert("✅ Login successful");
+        // let btn = document.getElementsByClassName('btn').innerText
+        // console.log(btn)
         setMail("");
         setPasskey("");
       }
@@ -49,7 +54,9 @@ export const Admin = () => {
       });
 
       if (res.data.url) {
-        alert(`✅ Uploaded: ${res.data.url}`);
+        //alert(`✅ Uploaded: ${res.data.url}`);
+        // let btn = document.getElementsByClassName('btn').value.trim()
+        // console.log(btn)
         setFile(null);
         e.target.reset();
         setToken(null);
@@ -64,7 +71,17 @@ export const Admin = () => {
   return (
     <div className="page-wrapper">
       <div className="admin-container">
-        <h2>Admin Panel</h2>
+        
+        {
+          !token ? (<h2>Admin Panel</h2>):(<h2>Access Granted</h2>)
+        }
+        {!token && (
+          <a id="adminmsg" href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`} target="_blank" rel="noopener noreferrer">
+          <FaWhatsapp style={{color:'#25D366'}} size={26}/>
+          <p id="admsg">Get email and password from admin via Whatsapp.</p>
+        </a>
+        )}
+        
 
         {/* Shows login form when no token */}
         {!token && (
@@ -92,7 +109,8 @@ export const Admin = () => {
         {/* Shows upload form when logged in */}
         {token && (
           <>
-            <h2>Upload Video or Image</h2>
+            <h3>Upload Video or Image</h3>
+            <p>content must be less then 50 mb and format shuold be (jpg, img, mp4)</p>
             <form className="form-container-file" onSubmit={handleUpload}>
               <input
                 type="file"

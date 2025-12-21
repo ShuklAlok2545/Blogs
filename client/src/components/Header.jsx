@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { auth, loginWithGoogle, logout } from "../firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import "./Header.css";
@@ -45,33 +45,29 @@ export const Header = () => {
       console.error("Login failed:", err);
     }
   };
-
-  
-  
   // Logout
   const handleLogout = async () => {
     await logout();
   };
+  
 
 
   return (
     <header className="navbar">
       <div className="navbar-logo">NIT SGR 🍁</div>
-
       <div className={`navbar-wrapper ${menuOpen ? "open" : ""}`}>
-        <ul className="navbar-links">
-          <li>
-            <Link to="/" onClick={closeMenu}>
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link to="/blogs" onClick={closeMenu}>
-              Blogs
-            </Link>
-          </li>
-        </ul>
-
+      <ul className="navbar-links">
+        <li>
+          <NavLink to="/" onClick={closeMenu} className={({ isActive }) => isActive ? "active" : ""}>
+            Home
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/blogs" onClick={closeMenu} className={({ isActive }) => isActive ? "active" : ""}>
+            Blogs
+          </NavLink>
+        </li>
+      </ul>
         <div className="navbar-actions">
           {user ? (
             <div className="user-info">

@@ -1,5 +1,6 @@
 import React from "react";
 import "./Footer.css";
+import { FaUpload } from "react-icons/fa";
 import { FaLinkedin, FaInstagram, FaFolderOpen, FaWhatsapp } from "react-icons/fa";
 
 export const Footer = () => {
@@ -22,16 +23,20 @@ export const Footer = () => {
         <a href="https://www.linkedin.com/in/alok-shukla-ack/" target="_blank" rel="noopener noreferrer">
           <FaLinkedin style={{color:'#0A66C2'}} />
         </a>
+        
         <a href="https://www.instagram.com/shuklalok_.2545/" target="_blank" rel="noopener noreferrer">
           <FaInstagram  style={{background:'linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)'
-}}/>
-        </a>
-        <a href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`} target="_blank" rel="noopener noreferrer">
-          <FaWhatsapp style={{color:'#25D366'}}/>
-        </a>
+        }}/></a>
+
         <a href="https://shuklalokportfolio.netlify.app/" target="_blank" rel="noopener noreferrer">
       <FaFolderOpen  style={{color:'#4A90E2'}}/>
     </a>
+        <a href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`} target="_blank" rel="noopener noreferrer">
+          <FaWhatsapp style={{color:'#25D366'}}/>
+        </a>
+        
+   <a href="https://blogsadmin.netlify.app/" target="blank"><FaUpload color="dark blue">upload</FaUpload></a>
+
       </div>
     </footer>
   );

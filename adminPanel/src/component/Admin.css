@@ -112,4 +112,11 @@
       padding: 10px 12px;
     }
   }
-  
+  #adminmsg{
+    text-decoration: none;
+  }
+  #admsg{
+    color: white;
+    font-size: 0.8rem;
+    
+  }
