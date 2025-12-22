@@ -17,8 +17,6 @@ const ADMIN_PASS = process.env.ADMIN_PASS;
 const JWT_SECRET = process.env.JWT_SECRET;
 
 //send mail to all users when new post added
-allusers();
-
 
 
 // admin Login
@@ -55,6 +53,9 @@ router.post('/upload', upload.single("file"), async (req, res) => {
           public_id: result.public_id,
           fileType: result.resource_type
       });
+
+      await allusers();
+      
   } catch (error) {
       console.error(error);
       res.status(500).json({ message: "Upload failed" });

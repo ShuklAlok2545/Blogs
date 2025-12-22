@@ -9,6 +9,7 @@ export const Admin = () => {
   const [file, setFile] = useState(null);
 
   const API_BASE = "https://blogs-me15.onrender.com";
+  // const API_BASE = "http://localhost:5300";
 
   const phoneNumber= '+919991866256'
   const message = "Hello! I found you via your BlogsPage.Please provide me mail and password to upload some good content";

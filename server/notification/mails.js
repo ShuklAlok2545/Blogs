@@ -36,7 +36,7 @@ export const allusers = async () => {
       for (const user of users) {
         try {
           const info = await transporter.sendMail({
-            from: 'acker25459850@gmail.com',
+            from: `NITSXR Blogs <shuklalok2545@gmail.com>`,
             to: user.email,
             subject: 'New post Uploaded on NIT SGR Blogs',
             text: `Hi ${user.name},
