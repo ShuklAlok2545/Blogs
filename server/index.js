@@ -14,9 +14,6 @@ app.use(cors({
 }))
 app.disable("x-powered-by");
 
-app.get('/',(req,res)=>{
-    res.send("hi");
-})
 
 //database connected
 conntectTodb();
