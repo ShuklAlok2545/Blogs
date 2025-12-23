@@ -30,6 +30,7 @@ export const Blogs = () => {
 
 
   const BaseURI = 'https://blogs-me15.onrender.com'
+  //const BaseURI = "http://localhost:5300";
   useEffect(() => {
     const cache = JSON.parse(localStorage.getItem("userLikes") || "{}");
     setLikesCache(cache);

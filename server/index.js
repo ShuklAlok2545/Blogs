@@ -20,11 +20,16 @@ conntectTodb();
 
 app.use(express.json());
 
+app.get("/", (req, res)=>{
+    res.send("hi");
+})
 //admin login,videos images all here get
 app.use('/',route);
 
 //can upload images videos
 app.use('/upload/file', authentication, route);
+
+
 
 
 app.listen(Port,(e)=>{

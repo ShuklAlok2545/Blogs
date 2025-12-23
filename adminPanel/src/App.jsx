@@ -4,9 +4,9 @@ import { Admin } from "./component/Admin";
 function App() {
   return (
    <>
-   <div className="container">
-      <Admin/>
-   </div>
+      <div className="container">
+          <Admin/>
+      </div>
    </>
   );
 }

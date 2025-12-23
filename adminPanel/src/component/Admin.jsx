@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { DeletePost } from "./DeletePosts";
 import "./Admin.css";
 import {FaWhatsapp } from "react-icons/fa";
 export const Admin = () => {
@@ -9,7 +10,7 @@ export const Admin = () => {
   const [file, setFile] = useState(null);
 
   const API_BASE = "https://blogs-me15.onrender.com";
-  // const API_BASE = "http://localhost:5300";
+  //const API_BASE = "http://localhost:5300";
 
   const phoneNumber= '+919991866256'
   const message = "Hello! I found you via your BlogsPage.Please provide me mail and password to upload some good content";
@@ -109,19 +110,22 @@ export const Admin = () => {
 
         {/* Shows upload form when logged in */}
         {token && (
-          <>
-            <h3>Upload Video or Image</h3>
-            <p>content must be less then 50 mb and format shuold be (jpg, img, mp4)</p>
-            <form className="form-container-file" onSubmit={handleUpload}>
-              <input
-                type="file"
-                onChange={(e) => setFile(e.target.files[0])}
-                required
-              />
-              <button className="btn" type="submit">
-                Upload
-              </button>
-            </form>
+          <><div className="contents">
+              <h3>Upload Video or Image</h3>
+              <p>content must be less then 50 mb and format shuold be (jpg, img, mp4)</p>
+              <form className="form-container-file" onSubmit={handleUpload}>
+                <input
+                  type="file"
+                  onChange={(e) => setFile(e.target.files[0])}
+                  required
+                />
+                <button className="btn" type="submit">
+                  Upload
+                </button>
+              </form>
+              <div><DeletePost/></div>
+              
+            </div>
           </>
         )}
       </div>

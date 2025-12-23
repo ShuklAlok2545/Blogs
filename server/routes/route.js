@@ -6,7 +6,8 @@ import jwt from 'jsonwebtoken';
 import dotenv from "dotenv";
 import fs from 'fs'
 import Blog from '../models/post.js'
-import { allusers} from '../notification/mails.js';
+import deletedPosts from '../models/deletedPosts.js';
+
 import { get } from 'http';
 
 dotenv.config();
@@ -53,8 +54,6 @@ router.post('/upload', upload.single("file"), async (req, res) => {
           public_id: result.public_id,
           fileType: result.resource_type
       });
-
-      await allusers();
       
   } catch (error) {
       console.error(error);
@@ -251,8 +250,37 @@ router.get("/api/blogs/images", async (req, res) => {
     }
   });
   
-
+//geting all posts to for deletion
   
+router.get("/api/getallposts", async (req,res)=>{
+  try {
+    const blogs = await Blog.find().sort({createdAt:-1});
+    res.send(blogs);
+    console.log(blogs[0])
+  }
+  catch (error) {
+    console.log(error)
+  }
+})
 
+//saving deletedpost and deleting the post
+router.post("/api/deletepost", async (req,res)=>{
+  try {
+    const data = req.body
+    //record of deleted posts
+    await deletedPosts.create({public_id:data.public_id,url:data.secure_url,Type:data.fileType})
+    //deleting the post
+    const dlt = await Blog.deleteOne({public_id: data.public_id})
+
+    const result = await deletedPosts.find();
+    res.status(200).json({msg:'post deleted!',
+      url:data.secure_url,
+    })
+   // console.log('getting for deletion:',result,dlt)
+  }
+  catch (error) {
+    console.log(error)
+  }
+})
   
 export default router;
