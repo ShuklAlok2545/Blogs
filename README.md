@@ -47,7 +47,7 @@ Ready for deployment (Heroku/Render for backend, Netlify/Vercel for frontend)
 Code structured for scalability & maintainability
 
 ###Live demo
-Current version running at: [https://letstalksapp.netlify.app](https://nitsxrblogs.netlify.app)
+Current version running at: [https://nitsxrblogs.netlify.app/blogs](https://nitsxrblogs.netlify.app)
 
 
 ### 📷 Screenshots 
