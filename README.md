@@ -57,5 +57,24 @@ Current version running at: [https://letstalksapp.netlify.app](https://nitsxrblo
 `Home page with latest updates`
 <img width="1440" height="900" alt="Screenshot 2026-01-20 at 01 39 35" src="https://github.com/user-attachments/assets/2401b82a-3cf8-4fe7-92d2-2ec088166425" />
 
+`Blogs and Posts`
+<img width="515" height="685" alt="Screenshot 2026-01-20 at 01 39 57" src="https://github.com/user-attachments/assets/bdfd207b-2438-4662-9f26-fd525ab917d7" />
+
+`Images and videos`
+<img width="515" height="685" alt="Screenshot 2026-01-20 at 01 40 17" src="https://github.com/user-attachments/assets/64605dc9-3a07-4931-abeb-143f23932aa5" />
+
+`admin lofic panel for upload or delete`
+<img width="1440" height="900" alt="Screenshot 2026-01-20 at 01 50 05" src="https://github.com/user-attachments/assets/8960132e-eb96-4a00-99c5-aec0c92256c1" />
+
+`upload or delete posts`
+<img width="1440" height="900" alt="Screenshot 2026-01-20 at 01 50 25" src="https://github.com/user-attachments/assets/bb56a750-3605-408f-ad46-ab8333289113" />
+
+<img width="1440" height="900" alt="Screenshot 2026-01-20 at 01 50 40" src="https://github.com/user-attachments/assets/e28cd8f6-7a30-4eed-a086-2087f09365e1" />
+
+
+
+
+
+
 
 
