@@ -45,3 +45,11 @@ Environment-based configuration (.env) for secrets
 Easy local development with concurrent frontend & backend servers
 Ready for deployment (Heroku/Render for backend, Netlify/Vercel for frontend)
 Code structured for scalability & maintainability
+
+###Live demo
+Current version running at: [https://letstalksapp.netlify.app](https://nitsxrblogs.netlify.app)
+
+
+### 📷 Screenshots 
+#`Home page`
+<img width="515" height="685" alt="Screenshot 2026-01-20 at 01 39 25" src="https://github.com/user-attachments/assets/16c2c67a-d389-418e-87a4-a5321630ce13" />
